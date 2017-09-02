@@ -3,7 +3,7 @@ Selenium-Maven-Template
 
 [![Join the chat at https://gitter.im/Ardesco/Selenium-Maven-Template](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Ardesco/Selenium-Maven-Template?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A maven template for Selenium that has the latest dependencies so that you can just check out and start writing tests in four easy steps.  If you like what you see have a look at my Selenium book [Mastering Selenium Webdriver](https://www.amazon.co.uk/Mastering-Selenium-WebDriver-Mark-Collin/dp/1784394351).
+A maven template for Selenium 3 that has the latest dependencies so that you can just check out and start writing tests in four easy steps.  If you like what you see have a look at my Selenium book [Mastering Selenium Webdriver](https://www.amazon.co.uk/Mastering-Selenium-WebDriver-Mark-Collin/dp/1784394351).
 
 
 1. Open a terminal window/command prompt
@@ -22,6 +22,11 @@ All dependencies should now be downloaded and the example google cheese test wil
         
 - The maven-failsafe-plugin will pick up any files that end in IT by default.  You can customise this is you would prefer to use a custom identifier for your Selenium tests.
 
+### Known problems...
+
+- It looks like OperaDriver doesn't work any more and Opera doesn't really care... (https://github.com/operasoftware/operachromiumdriver/issues/27)
+- It looks like SafariDriver is no longer playing nicely and we are waiting on Apple to fix it... Running safari driver locally in server mode and connecting to it like a grid seems to be the workaround.
+
 ### Anything else?
 
 Yes you can specify which browser to use by using one of the following switches:
@@ -29,11 +34,12 @@ Yes you can specify which browser to use by using one of the following switches:
 - -Dbrowser=firefox
 - -Dbrowser=chrome
 - -Dbrowser=ie
+- -Dbrowser=edge
 - -Dbrowser=opera
 - -Dbrowser=htmlunit
 - -Dbrowser=phantomjs
 
-You don't need to worry about downloading the IEDriverServer, chromedriver , operachromium, or wires binaries, this project will do that for you automatically.
+You don't need to worry about downloading the IEDriverServer, MicrosoftWebDriver, chromedriver , operachromium, or wires binaries, this project will do that for you automatically.
 
 Not got PhantomJS?  Don't worry that will be automatically downloaded for you as well!
 
